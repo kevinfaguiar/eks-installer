@@ -22,6 +22,8 @@ steps:
       - ls -la
       - apk add --update make bash
       - make codefresh-load-tfstate || echo "Skipping."
+      - cd terraform
+      - cat terraform.tfstate
 
   setup_eks_cluster:
     title: Setup EKS cluster using Terraform
