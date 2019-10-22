@@ -1,6 +1,9 @@
-version: '1.0'
+version: "1.0"
 steps:
-
+  git_clone:
+    type: git-clone
+    title: Clone the eks-installer repo
+    repo: kevinfaguiar/eks-installer
   check_env:
     title: Check environment for required variables
     image: bash:4.4.23
