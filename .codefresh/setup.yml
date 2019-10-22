@@ -27,12 +27,10 @@ steps:
 
   setup_eks_cluster:
     title: Setup EKS cluster using Terraform
-    image: hashicorp/terraform:0.11.7
+    image: hashicorp/terraform:0.12.7
     commands:
       - apk add --update make bash
-      - set +e
-      - make setup
-      - cf_export RC=$?
+      - set +e; make setup; cf_export RC=$?
 
   save_tfstate:
     title: Save Terraform statefile to Codefresh context

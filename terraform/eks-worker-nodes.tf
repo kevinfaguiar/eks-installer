@@ -104,7 +104,6 @@ data "aws_ami" "eks-worker" {
 locals {
   demo-node-userdata = <<USERDATA
 #!/bin/bash -xe
-
 CA_CERTIFICATE_DIRECTORY=/etc/kubernetes/pki
 CA_CERTIFICATE_FILE_PATH=$CA_CERTIFICATE_DIRECTORY/ca.crt
 mkdir -p $CA_CERTIFICATE_DIRECTORY
