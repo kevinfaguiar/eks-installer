@@ -28,7 +28,9 @@ steps:
     commands:
       - cd ./eks-installer
       - apk add --update make bash
-      - set +e; make setup; cf_export RC=$?
+      - set +e
+      - make setup
+      - cf_export RC=$?
 
   save_tfstate:
     title: Save Terraform statefile to Codefresh context
