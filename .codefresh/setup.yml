@@ -3,6 +3,7 @@ steps:
   git_clone:
     type: git-clone
     title: Clone the eks-installer repo
+    working_directory: /codefresh/volume
     repo: kevinfaguiar/eks-installer
   check_env:
     title: Check environment for required variables
@@ -16,6 +17,7 @@ steps:
     title: Attempt to load Terraform statefile from Codefresh context
     image: codefresh/cli:0.8.54
     commands:
+      - ls -la
       - apk add --update make bash
       - make codefresh-load-tfstate || echo "Skipping."
 
