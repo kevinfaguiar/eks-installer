@@ -17,6 +17,7 @@ steps:
     title: Attempt to load Terraform statefile from Codefresh context
     image: codefresh/cli:0.8.54
     commands:
+      - pwd
       - ls -la
       - apk add --update make bash
       - make codefresh-load-tfstate || echo "Skipping."
