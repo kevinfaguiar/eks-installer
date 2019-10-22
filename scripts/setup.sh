@@ -18,6 +18,7 @@ set +e
 N=0
 SUCCESS="false"
 until [ $N -ge 3 ]; do
+  echo try
   terraform apply -auto-approve \
     -var "cluster-name=${CLUSTER_NAME}" \
     -var "cluster-size=${CLUSTER_SIZE}" \
@@ -26,10 +27,12 @@ until [ $N -ge 3 ]; do
     -var "cluster-key-name=${CLUSTER_KEY_NAME}" \
     .
   if [[ "$?" == "0" ]]; then
+    echo success
     SUCCESS="true"
     break
   fi
   N=$[$N+1]
+  echo failed
 done
 set -e
 
