@@ -50,6 +50,7 @@ steps:
       - chmod +x heptio-authenticator-aws
       - cp heptio-authenticator-aws /usr/local/bin
       - export KUBECONFIG="$(pwd)/kubernetes/kubeconfig.yaml"
+      - ls -la
       - cd kubernetes/
       - kubectl apply -f config-map-aws-auth.yaml
       - kubectl apply -f service-account.yaml
