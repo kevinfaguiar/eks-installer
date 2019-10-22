@@ -1,17 +1,29 @@
 #!/bin/bash -e
 
+ls -la
+
 CLUSTER_NAME="${CLUSTER_NAME:-terraform-eks-demo}"
 CLUSTER_SIZE="${CLUSTER_SIZE:-1}"
 CLUSTER_REGION="${CLUSTER_REGION:-us-west-2}"
 CLUSTER_INSTANCE_TYPE="${CLUSTER_INSTANCE_TYPE:-m4.large}"
 CLUSTER_KEY_NAME="${CLUSTER_KEY_NAME:-}"
 
+echo forming dir
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR/../
 
+echo $DIR
+
+echo cded
+
 cd terraform/
 
+echo will init
+
 terraform init
+
+echo initied
 
 # try 3 times in case we are stuck waiting for EKS cluster to come up
 set +e
