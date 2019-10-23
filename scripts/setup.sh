@@ -21,7 +21,7 @@ cd terraform/
 
 echo will init
 
-terraform init -lock=false
+terraform init -lock=false -lock-timeout=180
 
 echo initied
 
