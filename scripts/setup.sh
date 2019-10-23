@@ -21,7 +21,7 @@ cd terraform/
 
 echo will init
 
-terraform init
+terraform init -lock=false
 
 echo initied
 
