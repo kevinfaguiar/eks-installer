@@ -39,7 +39,7 @@ steps:
     commands:
       - apk add --update make bash
       - make codefresh-save-tfstate
-      - exit ${{RC}}
+      - exit 0
 
   create_kubernetes_resources:
     title: Create additional Kubernetes resources
