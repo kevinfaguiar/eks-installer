@@ -17,6 +17,8 @@ echo $DIR
 
 echo cded
 
+ls -la
+
 cd terraform/
 
 echo will init
