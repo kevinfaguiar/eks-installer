@@ -12,7 +12,7 @@ if [ "$(uname)" == "Darwin" ]; then
     DECODE_FLAGS="-D"
 fi
 
-echo eks-install-${CLUSTER_NAME}
+echo eks-${CLUSTER_NAME}
 
 codefresh get context eks-install-${CLUSTER_NAME} -o json | \
     jq -r '.spec.data.TFSTATE_BASE64' | \
