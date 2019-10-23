@@ -29,6 +29,7 @@ steps:
     title: Setup EKS cluster using Terraform
     image: hashicorp/terraform:0.12.7
     commands:
+      - export TF_LOG="TRACE"
       - apk add --update make bash
       - set +e; make setup; cf_export RC=$?
 
